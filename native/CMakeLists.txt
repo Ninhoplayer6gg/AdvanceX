@@ -42,6 +42,11 @@ if(NOT EXISTS "${MGBA_DIR}/CMakeLists.txt")
     message(FATAL_ERROR "mGBA sources not found in ${MGBA_DIR}. Run: git submodule update --init --recursive")
 endif()
 
+# mGBA 0.10.x declares an old cmake_minimum_required, which CMake 4 refuses
+# unless a minimum policy version is provided.
+if(CMAKE_VERSION VERSION_GREATER_EQUAL 4.0)
+    set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
+endif()
 set(LIBMGBA_ONLY ON CACHE BOOL "" FORCE)
 set(M_CORE_GBA ON CACHE BOOL "" FORCE)
 set(M_CORE_GB OFF CACHE BOOL "" FORCE)
