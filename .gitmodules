@@ -1,0 +1,3 @@
+[submodule "native/third_party/mgba"]
+	path = native/third_party/mgba
+	url = https://github.com/mgba-emu/mgba.git

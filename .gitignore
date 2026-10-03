@@ -1,0 +1,36 @@
+# Gradle / Kotlin
+.gradle/
+build/
+!tools/**/build/
+.kotlin/
+local.properties
+*.iml
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Native host builds
+native/build*/
+out/
+
+# Android signing material (never commit keystores)
+*.jks
+*.keystore
+!tools/sdk-build/debug.keystore.README
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Never commit commercial game data or proprietary firmware
+*.gba
+!tools/testrom/dist/*.gba
+!app/src/main/assets/demo/*.gba
+*.sav
+*.ss[0-9]
+*.axstate
+gba_bios.bin
+*.bios
