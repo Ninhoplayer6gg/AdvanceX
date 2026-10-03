@@ -1,7 +1,6 @@
 # Gradle / Kotlin
 .gradle/
 build/
-!tools/**/build/
 .kotlin/
 local.properties
 *.iml
