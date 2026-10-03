@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+<resources>
+    <color name="bg">#FF0B0D17</color>
+    <color name="surface">#FF151827</color>
+    <color name="surface_high">#FF1E2235</color>
+    <color name="outline">#FF2A2F45</color>
+    <color name="text_primary">#FFF1F3FF</color>
+    <color name="text_secondary">#FFA3A8C3</color>
+    <color name="text_tertiary">#FF6B7090</color>
+    <color name="brand_violet">#FF8B5CF6</color>
+    <color name="brand_cyan">#FF22D3EE</color>
+    <color name="brand_pink">#FFF472B6</color>
+    <color name="success">#FF34D399</color>
+    <color name="warning">#FFFBBF24</color>
+    <color name="danger">#FFF87171</color>
+    <color name="launcher_bg">#FF12152A</color>
+</resources>

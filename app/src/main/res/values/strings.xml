@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+<resources>
+    <string name="app_name">AdvanceX</string>
+    <string name="tagline">Game Boy Advance, enhanced</string>
+
+    <!-- Common -->
+    <string name="action_back">Back</string>
+    <string name="action_play">Play</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_import">Import Game</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_remove">Remove</string>
+    <string name="action_save">Save</string>
+    <string name="action_reset">Reset</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_done">Done</string>
+    <string name="action_install">Install</string>
+    <string name="action_details">Details</string>
+    <string name="action_rename">Rename</string>
+    <string name="badge_experimental">Experimental</string>
+    <string name="badge_coming_later">Coming later</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+
+    <!-- Home -->
+    <string name="home_continue_playing">Continue Playing</string>
+    <string name="home_recently_played">Recently Played</string>
+    <string name="home_library">Game Library</string>
+    <string name="home_mods">Mods</string>
+    <string name="home_welcome_title">Welcome to AdvanceX</string>
+    <string name="home_welcome_body">Import your own Game Boy Advance ROMs (.gba or .zip) to start playing. AdvanceX never downloads or includes commercial games.</string>
+    <string name="home_try_demo">Try the AdvanceX Test Cartridge</string>
+    <string name="home_pick_game">Pick a game from your library to start playing.</string>
+    <string name="home_games_count">%1$d games</string>
+    <string name="home_import_hint">.gba or .zip from your device</string>
+    <string name="home_mods_hint">.advx enhancement packs</string>
+    <string name="home_settings_hint">Video, audio, controls</string>
+    <string name="home_footer">AdvanceX %1$s · emulation core: mGBA · open source (MPL-2.0)</string>
+    <string name="home_last_played">Last played %1$s · %2$s played</string>
+    <string name="notice_title">Safe mode</string>
+
+    <!-- Library -->
+    <string name="library_title">Game Library</string>
+    <string name="library_search_hint">Search games</string>
+    <string name="library_filter_all">All</string>
+    <string name="library_filter_favorites">Favorites</string>
+    <string name="library_filter_recent">Recent</string>
+    <string name="library_empty_title">Your library is empty</string>
+    <string name="library_empty_body">Import a .gba or .zip file you own. AdvanceX copies it into its private storage and identifies it by hash.</string>
+    <string name="library_no_results">No games match your search.</string>
+    <string name="library_never_played">Never played</string>
+    <string name="library_favorite_add">Add to favorites</string>
+    <string name="library_favorite_remove">Remove from favorites</string>
+    <string name="library_set_cover">Set custom cover…</string>
+    <string name="library_reset_cover">Use automatic cover</string>
+    <string name="library_remove_title">Remove “%1$s”?</string>
+    <string name="library_remove_body">The ROM copy is removed from AdvanceX. Your saves are kept unless you choose to delete them too.</string>
+    <string name="library_remove_keep_saves">Remove, keep saves</string>
+    <string name="library_remove_delete_saves">Remove and delete saves</string>
+
+    <!-- Import -->
+    <string name="import_added">Added “%1$s”</string>
+    <string name="import_already">“%1$s” is already in your library</string>
+    <string name="import_failed_title">Could not import %1$s</string>
+    <string name="import_summary">%1$d added, %2$d already present, %3$d failed</string>
+    <string name="import_working">Importing…</string>
+
+    <!-- Game details -->
+    <string name="game_play">Play</string>
+    <string name="game_resume">Continue where you left off</string>
+    <string name="game_start_fresh">Start from cartridge save</string>
+    <string name="game_advance_mode">Advance Mode</string>
+    <string name="game_advance_on">On — AdvanceX enhancements</string>
+    <string name="game_advance_off">Off — Original GBA</string>
+    <string name="game_advance_safe">Off — safe mode after a crash</string>
+    <string name="game_mods">Mods</string>
+    <string name="game_graphics">Graphics</string>
+    <string name="game_controls">Controls</string>
+    <string name="game_saves">Saves</string>
+    <string name="game_info">Game Information</string>
+    <string name="game_graphics_global">Using global settings</string>
+    <string name="game_graphics_custom">Custom for this game</string>
+    <string name="game_controls_hint">Touch layout, gamepads and keyboards</string>
+    <string name="game_mods_none">No installed mod targets this game</string>
+    <string name="game_mods_count">%1$d compatible mods</string>
+    <string name="game_saves_summary">%1$d save states · cartridge save %2$s</string>
+    <string name="game_saves_none">No save data yet</string>
+    <string name="game_profile_detected">Advance profile: %1$s</string>
+    <string name="game_profile_none">No Advance profile for this ROM</string>
+
+    <!-- Advance Mode -->
+    <string name="advance_title">Advance Mode</string>
+    <string name="advance_off_title">Original GBA</string>
+    <string name="advance_off_body">The game runs exactly as on the console. No profiles, patches, replacements or shader effects.</string>
+    <string name="advance_on_title">AdvanceX enhancements</string>
+    <string name="advance_on_body">Enables shader effects, game profiles, runtime patches and asset replacement. The original ROM file is never modified.</string>
+    <string name="advance_safe_banner">Enhancements were switched off for this game because AdvanceX stopped unexpectedly while they were active.</string>
+    <string name="advance_safe_reenable">Re-enable enhancements</string>
+    <string name="advance_profile">Game profile</string>
+    <string name="advance_patches">Runtime patches</string>
+    <string name="advance_patches_none">This profile has no runtime patches.</string>
+    <string name="advance_replacements">Sprite replacement</string>
+    <string name="advance_replacements_body">%1$d high-resolution replacements from this profile</string>
+    <string name="advance_auto_upscale">Auto-upscale sprites (Scale2x)</string>
+    <string name="advance_auto_upscale_body">Captures sprites while you play, upscales them and draws the result. Demonstrates the asset pipeline; AI upscaling will plug in here later.</string>
+    <string name="advance_widescreen">Widescreen</string>
+    <string name="advance_widescreen_body">Display widescreen keeps the original image intact and fills the sides. Native widescreen needs game-specific patches.</string>
+    <string name="advance_messages">Engine notes</string>
+    <string name="advance_requires_on">Turn on Advance Mode to use these features.</string>
+
+    <!-- Saves -->
+    <string name="saves_title">Saves</string>
+    <string name="saves_cartridge">Cartridge save</string>
+    <string name="saves_cartridge_none">The game has not written a save yet.</string>
+    <string name="saves_backup_now">Back up now</string>
+    <string name="saves_restore">Restore a backup</string>
+    <string name="saves_import">Import .sav file</string>
+    <string name="saves_export">Export all saves (.zip)</string>
+    <string name="saves_states">Save states</string>
+    <string name="saves_states_note">Save states belong to this exact ROM version. Loading a state never overwrites your cartridge save.</string>
+    <string name="saves_slot_empty">Empty</string>
+    <string name="saves_load">Load</string>
+    <string name="saves_backups_none">No backups yet. AdvanceX makes one automatically each time you start the game.</string>
+    <string name="saves_restored">Backup restored. The previous save was kept as a backup.</string>
+    <string name="saves_exported">Saves exported</string>
+    <string name="saves_imported">Save imported. The previous save was kept as a backup.</string>
+    <string name="saves_delete_state">Delete this save state?</string>
+
+    <!-- Graphics -->
+    <string name="graphics_title">Graphics</string>
+    <string name="graphics_use_global">Use global graphics settings</string>
+    <string name="graphics_presets">Presets</string>
+    <string name="graphics_scaling">Scaling</string>
+    <string name="graphics_filter">Filter</string>
+    <string name="graphics_color_correction">GBA colour correction</string>
+    <string name="graphics_color_correction_body">Shows colours as they looked on the original screen.</string>
+    <string name="graphics_frame_blending">Frame blending</string>
+    <string name="graphics_frame_blending_body">LCD persistence; some games rely on it for transparency effects.</string>
+    <string name="graphics_effects">Advance effects</string>
+    <string name="graphics_effects_note">These effects apply when Advance Mode is on.</string>
+    <string name="graphics_scanlines">Scanlines</string>
+    <string name="graphics_lcd_grid">LCD grid</string>
+    <string name="graphics_sharpen">Sharpen</string>
+    <string name="graphics_ambient">Ambient background</string>
+    <string name="graphics_ambient_body">Fills the screen sides with a soft glow of the game. The game image itself is never stretched.</string>
+    <string name="graphics_strength">Strength</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_general">General</string>
+    <string name="settings_advance_default">Advance Mode for new games</string>
+    <string name="settings_advance_default_body">Each game can override this.</string>
+    <string name="settings_autosave">Save state when leaving a game</string>
+    <string name="settings_autosave_body">Lets you continue exactly where you stopped. Cartridge saves are always written as you play.</string>
+    <string name="settings_video">Video</string>
+    <string name="settings_graphics_global">Graphics</string>
+    <string name="settings_graphics_global_body">Scaling, filters, colour correction, shaders</string>
+    <string name="settings_audio">Audio</string>
+    <string name="settings_volume">Volume</string>
+    <string name="settings_mute">Mute</string>
+    <string name="settings_latency">Audio buffer</string>
+    <string name="settings_latency_body">Lower is more responsive; raise it if you hear crackling.</string>
+    <string name="settings_audio_backend">Audio output</string>
+    <string name="settings_performance">Performance</string>
+    <string name="settings_performance_mode">Performance mode</string>
+    <string name="settings_fast_forward">Fast-forward speed</string>
+    <string name="settings_rewind">Rewind</string>
+    <string name="settings_rewind_enable">Enable rewind</string>
+    <string name="settings_rewind_body">Keeps recent snapshots in memory. Turn off on low-end devices.</string>
+    <string name="settings_rewind_duration">History length</string>
+    <string name="settings_rewind_memory">Memory limit</string>
+    <string name="settings_rewind_frequency">Snapshot frequency</string>
+    <string name="settings_controls">Controls</string>
+    <string name="settings_controls_body">Touch layout, haptics, gamepads, keyboards</string>
+    <string name="settings_bios">GBA BIOS (optional)</string>
+    <string name="settings_bios_none">Not needed: AdvanceX uses mGBA\'s built-in BIOS implementation.</string>
+    <string name="settings_bios_installed">Using your BIOS file for maximum compatibility.</string>
+    <string name="settings_bios_import">Import your own BIOS dump</string>
+    <string name="settings_bios_remove">Remove BIOS file</string>
+    <string name="settings_bios_invalid">That file is not a 16 KiB GBA BIOS dump.</string>
+    <string name="settings_mods">Mods</string>
+    <string name="settings_studio">Advance Studio</string>
+    <string name="settings_studio_body">Tools for creating enhancement packs</string>
+    <string name="settings_storage">Storage</string>
+    <string name="settings_cache">Asset cache</string>
+    <string name="settings_cache_clear">Clear cache</string>
+    <string name="settings_diagnostics">Diagnostics</string>
+    <string name="settings_perf_overlay">Performance overlay</string>
+    <string name="settings_perf_overlay_body">Shows speed, FPS and audio state while playing.</string>
+    <string name="settings_export_logs">Export logs and crash reports</string>
+    <string name="settings_crash_reports">%1$d local crash reports</string>
+    <string name="settings_clear_logs">Clear logs</string>
+    <string name="settings_about">About</string>
+    <string name="settings_licenses">Open-source licenses</string>
+    <string name="settings_version">Version %1$s</string>
+
+    <!-- Controls -->
+    <string name="controls_title">Controls</string>
+    <string name="controls_touch">Touch controls</string>
+    <string name="controls_edit_portrait">Edit portrait layout</string>
+    <string name="controls_edit_landscape">Edit landscape layout</string>
+    <string name="controls_opacity">Opacity</string>
+    <string name="controls_size">Size</string>
+    <string name="controls_haptics">Vibration on press</string>
+    <string name="controls_hide_with_gamepad">Hide when a controller is connected</string>
+    <string name="controls_show_ff">Fast-forward button</string>
+    <string name="controls_show_rewind">Rewind button</string>
+    <string name="controls_presets">Layout presets</string>
+    <string name="controls_save_preset">Save current layouts as preset</string>
+    <string name="controls_preset_name">Preset name</string>
+    <string name="controls_reset_layouts">Reset layouts to default</string>
+    <string name="controls_gamepad">Gamepad mapping</string>
+    <string name="controls_keyboard">Keyboard mapping</string>
+    <string name="controls_press_key">Press a button on your controller or keyboard for “%1$s”…</string>
+    <string name="controls_unassigned">Not assigned</string>
+    <string name="controls_reset_mapping">Reset mapping</string>
+    <string name="controls_connected">Connected controllers</string>
+    <string name="controls_none_connected">No controller connected. Bluetooth and USB gamepads work automatically.</string>
+    <string name="editor_hint">Drag to move. Tap a control to select it, then resize it.</string>
+    <string name="editor_bigger">Bigger</string>
+    <string name="editor_smaller">Smaller</string>
+    <string name="editor_toggle_visibility">Show / hide</string>
+
+    <!-- Mods -->
+    <string name="mods_title">Mods</string>
+    <string name="mods_install">Install .advx package</string>
+    <string name="mods_install_demo">Install the AdvanceX Demo Pack</string>
+    <string name="mods_empty">No mods installed. Mods are .advx enhancement packs with profiles, patches, textures, audio and shaders.</string>
+    <string name="mods_by">v%1$s · by %2$s</string>
+    <string name="mods_contents">%1$d profiles · %2$d patches · %3$d sprites · %4$d textures · %5$d audio · %6$d shaders</string>
+    <string name="mods_scripts_warning">Contains scripts. AdvanceX does not run scripts; they will be ignored.</string>
+    <string name="mods_ignored_warning">%1$d files outside the supported folders will be skipped.</string>
+    <string name="mods_remove_title">Remove “%1$s”?</string>
+    <string name="mods_installed">Installed “%1$s”</string>
+    <string name="mods_compatible_with">Works with: %1$s</string>
+
+    <!-- Studio -->
+    <string name="studio_title">Advance Studio</string>
+    <string name="studio_intro">Tools for building enhancement packs. Features marked Experimental work today; the rest are planned.</string>
+    <string name="studio_capture">Capture sprites while playing</string>
+    <string name="studio_capture_body">Saves every sprite the game draws as PNG, with its fingerprint, plus a replacements template. Requires Advance Mode.</string>
+    <string name="studio_captured">%1$d sprites captured for %2$s</string>
+    <string name="studio_location">Saved in app storage: %1$s</string>
+    <string name="studio_export">Export captures as .advx skeleton</string>
+
+    <!-- Emulation -->
+    <string name="emu_loading">Starting %1$s…</string>
+    <string name="emu_failed">This game could not be started</string>
+    <string name="emu_menu_resume">Resume</string>
+    <string name="emu_menu_save_state">Save state</string>
+    <string name="emu_menu_load_state">Load state</string>
+    <string name="emu_menu_fast_forward">Fast-forward</string>
+    <string name="emu_menu_rewind">Rewind</string>
+    <string name="emu_menu_graphics">Graphics preset</string>
+    <string name="emu_menu_controls">Edit touch controls</string>
+    <string name="emu_menu_toggle_controls">Show touch controls</string>
+    <string name="emu_menu_reset">Reset game</string>
+    <string name="emu_menu_quit">Quit game</string>
+    <string name="emu_menu_advance">Advance Mode: %1$s</string>
+    <string name="emu_menu_restart_advance">Restart with Advance Mode %1$s</string>
+    <string name="emu_reset_confirm">Reset the game? Unsaved progress since the last in-game save is lost (your cartridge save is not affected).</string>
+    <string name="emu_state_saved">State saved to %1$s</string>
+    <string name="emu_state_loaded">State loaded from %1$s</string>
+    <string name="emu_resumed">Resumed from your last session</string>
+    <string name="emu_save_failed">Your save could not be written to storage. Free up space; AdvanceX will keep retrying.</string>
+    <string name="emu_pick_slot">Choose a slot</string>
+    <string name="emu_rewinding">Rewinding</string>
+    <string name="emu_rewind_off">Rewind is off (Settings → Rewind)</string>
+</resources>
