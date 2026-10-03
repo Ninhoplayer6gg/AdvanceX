@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Rumble on supported controllers / haptics for touch controls. -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.hardware.gamepad" android:required="false" />
+
+    <application
+        android:name="io.advancex.app.AdvanceXApp"
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:isGame="true"
+        android:appCategory="game"
+        android:theme="@style/Theme.AdvanceX">
+
+        <activity
+            android:name="io.advancex.app.ui.home.HomeActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="io.advancex.app.ui.library.LibraryActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="io.advancex.app.ui.game.GameDetailsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="io.advancex.app.ui.game.AdvanceModeActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="io.advancex.app.ui.game.SavesActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="io.advancex.app.ui.settings.GraphicsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="io.advancex.app.ui.settings.SettingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="io.advancex.app.ui.settings.ControlsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="io.advancex.app.ui.settings.ModsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="io.advancex.app.ui.settings.StudioActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="io.advancex.app.ui.settings.TextViewerActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="io.advancex.app.ui.controls.ControlsEditorActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
+            android:theme="@style/Theme.AdvanceX.Fullscreen" />
+
+        <!-- Rotation, keyboards and controllers must never recreate the running game. -->
+        <activity
+            android:name="io.advancex.app.ui.emulation.EmulationActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboard|keyboardHidden|navigation|uiMode|density"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            android:screenOrientation="fullUser"
+            android:theme="@style/Theme.AdvanceX.Fullscreen" />
+    </application>
+</manifest>

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "kind": "sprite",
+  "entries": [
+    { "key": "845471e4b21baf09", "file": "crystal_violet_hd.png", "note": "Crystal, violet palette" },
+    { "key": "c0f99b0ed5560c4f", "file": "crystal_gold_hd.png", "note": "Crystal, gold palette (press A)" }
+  ]
+}

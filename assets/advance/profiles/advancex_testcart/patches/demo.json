@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "patches": [
+    {
+      "id": "rom-patch-banner",
+      "name": "ROM patch banner",
+      "description": "Changes the on-screen text 'ROM PATCH: OFF' to 'ON!' in memory. The .gba file is never modified.",
+      "type": "rom",
+      "offset": "0x40B",
+      "bytes": "4F 4E 21",
+      "expect": "4F 46 46"
+    },
+    {
+      "id": "infinite-lives",
+      "name": "Infinite lives",
+      "description": "Keeps the lives counter at 9.",
+      "type": "memory",
+      "address": "0x02000000",
+      "bytes": "09 00 00 00",
+      "mode": "everyFrame"
+    },
+    {
+      "id": "score-boost",
+      "name": "Score boost after 5 seconds",
+      "description": "Once the frame counter passes 300, sets the score to 50000 a single time.",
+      "type": "memory",
+      "address": "0x02000004",
+      "bytes": "50 C3 00 00",
+      "mode": "once",
+      "condition": { "address": "0x02000008", "width": 4, "op": ">", "value": 300 },
+      "enabledByDefault": false
+    }
+  ]
+}

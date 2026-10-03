@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "advancex_testcart",
+  "name": "AdvanceX Test Cartridge",
+  "description": "Reference profile that demonstrates every Advance Engine feature on the bundled homebrew test cartridge.",
+  "authors": ["AdvanceX contributors"],
+  "gameCode": "ZAXT",
+  "romHash": "4edb7d353e87c788367ec5b38c67251312398230",
+  "match": {
+    "sha256": ["d2f55dd40cea140b277615f0ce679a7f170fa25861646fd0e371f50af125c745"],
+    "crc32": ["45de1f88"],
+    "romSize": 6156,
+    "revision": 0
+  },
+  "enhancements": {
+    "shader": true,
+    "spriteReplacement": true,
+    "widescreen": false,
+    "runtimePatches": true,
+    "audioReplacement": false
+  },
+  "graphics": { "preset": "lcd" },
+  "patches": ["patches/demo.json"],
+  "replacements": ["replacements/sprites.json"],
+  "widescreen": { "nativeSupported": false, "notes": "Display widescreen only." }
+}

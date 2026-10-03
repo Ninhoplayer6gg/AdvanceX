@@ -1,0 +1,25 @@
+[versions]
+# Android Gradle Plugin (requires JDK 17+ and Gradle 8.13+)
+agp = "8.13.0"
+kotlin = "2.2.21"
+kotlinx-serialization = "1.9.0"
+kotlinx-coroutines = "1.10.2"
+
+# Android SDK / NDK
+compileSdk = "35"
+minSdk = "26"
+targetSdk = "35"
+ndk = "28.2.13676358"
+cmake = "3.31.6"
+
+[libraries]
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+android-gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
