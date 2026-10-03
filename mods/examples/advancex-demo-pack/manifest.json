@@ -1,0 +1,12 @@
+{
+  "id": "advancex-demo-pack",
+  "name": "AdvanceX Demo Pack",
+  "version": "1.0.0",
+  "author": "AdvanceX contributors",
+  "description": "Example enhancement pack for the AdvanceX test cartridge: scanline preset, a golden-star sprite replacement and a score patch.",
+  "license": "MPL-2.0",
+  "compatibleGames": [
+    { "name": "AdvanceX Test Cartridge", "gameCode": "ZAXT", "sha1": "4edb7d353e87c788367ec5b38c67251312398230" }
+  ],
+  "advanceXVersion": ">=0.1.0"
+}

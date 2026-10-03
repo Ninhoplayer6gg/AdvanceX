@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "name": "AdvanceX Test Cartridge (Demo Pack)",
+  "romHash": "4edb7d353e87c788367ec5b38c67251312398230",
+  "enhancements": { "shader": true, "spriteReplacement": true, "runtimePatches": true },
+  "graphics": { "preset": "scanlines" },
+  "patches": ["../../patches/score.json"],
+  "replacements": ["replacements.json"]
+}
