@@ -73,6 +73,61 @@ target_include_directories(ax_core PUBLIC core/include)
 target_link_libraries(ax_core PUBLIC ax_common PRIVATE mgba)
 target_compile_options(ax_core PRIVATE ${AX_WARNINGS})
 
+add_library(ax_video STATIC
+    video/src/viewport.cpp
+    video/src/shader_builder.cpp
+    video/src/gl_renderer.cpp
+    video/src/egl_context.cpp
+)
+target_include_directories(ax_video PUBLIC video/include)
+target_link_libraries(ax_video PUBLIC ax_common)
+target_compile_options(ax_video PRIVATE ${AX_WARNINGS})
+if(ANDROID)
+    target_link_libraries(ax_video PUBLIC EGL GLESv2)
+else()
+    find_library(AX_EGL_LIB EGL REQUIRED)
+    find_library(AX_GLES2_LIB GLESv2 REQUIRED)
+    target_link_libraries(ax_video PUBLIC ${AX_EGL_LIB} ${AX_GLES2_LIB})
+endif()
+
+add_library(ax_audio STATIC
+    audio/src/audio_mixer.cpp
+    audio/src/null_output.cpp
+    audio/src/aaudio_output.cpp
+    audio/src/opensl_output.cpp
+    audio/src/output_factory.cpp
+)
+target_include_directories(ax_audio PUBLIC audio/include)
+target_link_libraries(ax_audio PUBLIC ax_common)
+target_compile_options(ax_audio PRIVATE ${AX_WARNINGS})
+if(ANDROID)
+    target_link_libraries(ax_audio PUBLIC aaudio OpenSLES)
+endif()
+
+add_library(ax_engine STATIC
+    engine/src/patch_engine.cpp
+    engine/src/rewind_buffer.cpp
+    engine/src/sprite_detector.cpp
+)
+target_include_directories(ax_engine PUBLIC engine/include)
+# The engine only sees the core *interfaces* (MemoryBus); it never links mGBA.
+target_include_directories(ax_engine PUBLIC core/include)
+target_link_libraries(ax_engine PUBLIC ax_common)
+target_compile_options(ax_engine PRIVATE ${AX_WARNINGS})
+
+add_library(ax_runtime STATIC
+    runtime/src/session.cpp
+    runtime/src/state_file.cpp
+    runtime/src/background_writer.cpp
+    runtime/src/frame_mailbox.cpp
+    runtime/src/crash_handler.cpp
+)
+target_include_directories(ax_runtime PUBLIC runtime/include)
+target_link_libraries(ax_runtime PUBLIC ax_core ax_engine ax_audio ax_common)
+find_package(Threads REQUIRED)
+target_link_libraries(ax_runtime PUBLIC Threads::Threads)
+target_compile_options(ax_runtime PRIVATE ${AX_WARNINGS})
+
 if(AX_BUILD_TESTS)
     enable_testing()
     add_subdirectory(tests)
