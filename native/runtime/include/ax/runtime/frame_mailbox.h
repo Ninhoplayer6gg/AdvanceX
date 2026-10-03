@@ -34,8 +34,10 @@ public:
     void publish(const uint32_t* pixels, size_t count, const std::vector<ReplacementDraw>& overlays);
     /// Copies the newest frame into `out` if it is newer than out->sequence.
     bool fetchIfNewer(FramePacket* out);
-    /// Waits until a frame newer than `sequence` exists or the timeout expires.
+    /// Waits until a frame newer than `sequence` exists, wakeAll() is called,
+    /// or the timeout expires. Returns true if a newer frame is available.
     bool waitForNewer(uint64_t sequence, std::chrono::milliseconds timeout);
+    /// Interrupts a pending waitForNewer() (e.g. surface or config change).
     void wakeAll();
     uint64_t sequence() const;
 
@@ -43,6 +45,7 @@ private:
     mutable std::mutex mutex_;
     std::condition_variable cv_;
     FramePacket latest_;
+    bool wakeRequested_ = false;
 };
 
 }  // namespace ax::runtime

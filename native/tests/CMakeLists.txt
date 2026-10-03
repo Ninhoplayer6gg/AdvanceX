@@ -5,6 +5,7 @@ add_executable(ax_tests
     test_video.cpp
     test_engine.cpp
     test_runtime.cpp
+    test_patch_blob.cpp
 )
 target_link_libraries(ax_tests PRIVATE ax_runtime ax_video)
 target_compile_options(ax_tests PRIVATE ${AX_WARNINGS})

@@ -24,10 +24,18 @@ bool FrameMailbox::fetchIfNewer(FramePacket* out) {
 
 bool FrameMailbox::waitForNewer(uint64_t sequence, std::chrono::milliseconds timeout) {
     std::unique_lock<std::mutex> lock(mutex_);
-    return cv_.wait_for(lock, timeout, [&] { return latest_.sequence != sequence; });
+    cv_.wait_for(lock, timeout, [&] { return latest_.sequence != sequence || wakeRequested_; });
+    wakeRequested_ = false;
+    return latest_.sequence != sequence;
 }
 
-void FrameMailbox::wakeAll() { cv_.notify_all(); }
+void FrameMailbox::wakeAll() {
+    {
+        std::lock_guard<std::mutex> lock(mutex_);
+        wakeRequested_ = true;
+    }
+    cv_.notify_all();
+}
 
 uint64_t FrameMailbox::sequence() const {
     std::lock_guard<std::mutex> lock(mutex_);

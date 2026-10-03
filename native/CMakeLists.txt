@@ -17,6 +17,12 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+if(ANDROID)
+    # Only JNI_OnLoad (marked JNIEXPORT) is exported from libadvancex.so.
+    set(CMAKE_C_VISIBILITY_PRESET hidden)
+    set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+    set(CMAKE_VISIBILITY_INLINES_HIDDEN ON)
+endif()
 
 option(AX_BUILD_TESTS "Build host unit/integration tests" OFF)
 option(AX_WITH_GLES "Build the OpenGL ES video pipeline" ON)
@@ -121,12 +127,29 @@ add_library(ax_runtime STATIC
     runtime/src/background_writer.cpp
     runtime/src/frame_mailbox.cpp
     runtime/src/crash_handler.cpp
+    runtime/src/patch_blob.cpp
 )
 target_include_directories(ax_runtime PUBLIC runtime/include)
 target_link_libraries(ax_runtime PUBLIC ax_core ax_engine ax_audio ax_common)
 find_package(Threads REQUIRED)
 target_link_libraries(ax_runtime PUBLIC Threads::Threads)
 target_compile_options(ax_runtime PRIVATE ${AX_WARNINGS})
+
+# ---------------------------------------------------------------------------
+# Android shared library loaded by the app (libadvancex.so)
+# ---------------------------------------------------------------------------
+if(ANDROID)
+    add_library(advancex SHARED
+        jni/advancex_jni.cpp
+        jni/render_thread.cpp
+    )
+    target_link_libraries(advancex PRIVATE ax_runtime ax_video android log)
+    target_compile_definitions(advancex PRIVATE AX_VERSION="${PROJECT_VERSION}")
+    target_compile_options(advancex PRIVATE ${AX_WARNINGS})
+    # Keep only JNI_OnLoad exported; everything else is reached via
+    # RegisterNatives. Smaller binary, fewer symbol clashes.
+    target_link_options(advancex PRIVATE -Wl,--gc-sections -Wl,--exclude-libs,ALL)
+endif()
 
 if(AX_BUILD_TESTS)
     enable_testing()
